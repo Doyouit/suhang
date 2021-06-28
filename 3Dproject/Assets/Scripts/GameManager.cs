@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        boss = null;
         menuCam.SetActive(false);
         gameCam.SetActive(true);
 
@@ -64,6 +65,8 @@ public class GameManager : MonoBehaviour
         gamePanel.SetActive(true);
 
         player.gameObject.SetActive(true);
+
+        
     }
 
     public void GameOver()
