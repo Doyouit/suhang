@@ -230,4 +230,14 @@ public class GameManager : MonoBehaviour
             bossHealthGroup.anchoredPosition = Vector3.up * 200;
         }
     }
+
+    public void Twitch()
+    {
+        Application.OpenURL("https://www.youtube.com/channel/UCJzfS-WmieHog0H2OQoXkeQ");
+    }
+
+    public void Twitch2()
+    {
+        Application.OpenURL("https://www.youtube.com/channel/UCw_N-Q_eYJo-IJFbNkhiYDA");
+    }
 }
