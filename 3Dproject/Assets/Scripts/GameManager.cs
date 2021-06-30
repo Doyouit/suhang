@@ -45,18 +45,34 @@ public class GameManager : MonoBehaviour
     public RectTransform bossHealthBar;
     public Text curScoreText;
     public Text bestText;
-
+    public int bestScore;
     void Awake()
     {
         enemyList = new List<int>();
-        maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
+        // if(PlayerPrefs.HasKey("MaxScore"))
+            // PlayerPrefs.GetInt("MaxScore");
 
-        if(PlayerPrefs.HasKey("MaxScore"))
-            PlayerPrefs.SetInt("MaxScore", 0);
+        bestScore = PlayerPrefs.GetInt("MaxScore");
+        // PlayerPrefs.Save();
+        maxScoreTxt.text = string.Format("{0:n0}", bestScore);
     }
+        
+
+        
 
     public void GameStart()
     {
+        if(player.score > bestScore)
+        {
+            bestText.gameObject.SetActive(true);
+            PlayerPrefs.SetInt("MaxScore", player.score);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MaxScore", bestScore);
+            PlayerPrefs.Save();
+        }
         boss = null;
         menuCam.SetActive(false);
         gameCam.SetActive(true);
@@ -75,16 +91,36 @@ public class GameManager : MonoBehaviour
         overPanel.SetActive(true);
         curScoreText.text = scoreTxt.text;
 
-        int MaxScore = PlayerPrefs.GetInt("MaxScore");
-        if(player.score > MaxScore)
+        // bestScore = PlayerPrefs.GetInt("MaxScore");
+        // PlayerPrefs.Save();
+        
+        if(player.score > bestScore)
         {
             bestText.gameObject.SetActive(true);
             PlayerPrefs.SetInt("MaxScore", player.score);
+            PlayerPrefs.Save();
         }
+        else
+        {
+            PlayerPrefs.SetInt("MaxScore", bestScore);
+            PlayerPrefs.Save();
+        }
+            
     }
 
     public void Restart()
     {
+        if(player.score > bestScore)
+        {
+            bestText.gameObject.SetActive(true);
+            PlayerPrefs.SetInt("MaxScore", player.score);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MaxScore", bestScore);
+            PlayerPrefs.Save();
+        }
         SceneManager.LoadScene(0);
     }
 
@@ -187,6 +223,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(player.score > bestScore)
+        {
+            bestText.gameObject.SetActive(true);
+            PlayerPrefs.SetInt("MaxScore", player.score);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MaxScore", bestScore);
+            PlayerPrefs.Save();
+        }
         if(isBattle)
             playTime += Time.deltaTime;
     }

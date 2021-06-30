@@ -80,51 +80,51 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1496}
+      Script: {instanceID: 1498}
     - Class: 114
-      Script: {instanceID: 1728}
+      Script: {instanceID: 1730}
     - Class: 114
-      Script: {instanceID: 1738}
+      Script: {instanceID: 1740}
     - Class: 114
-      Script: {instanceID: 1794}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 2070}
+      Script: {instanceID: 2072}
     - Class: 114
-      Script: {instanceID: 2234}
+      Script: {instanceID: 2236}
     - Class: 114
-      Script: {instanceID: 2462}
+      Script: {instanceID: 2326}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 2974}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 3060}
+      Script: {instanceID: 2978}
     - Class: 114
-      Script: {instanceID: 3068}
+      Script: {instanceID: 3064}
     - Class: 114
-      Script: {instanceID: 3080}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 3106}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3314}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3394}
+      Script: {instanceID: 3318}
     - Class: 114
-      Script: {instanceID: 3448}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3510}
+      Script: {instanceID: 3452}
     - Class: 114
-      Script: {instanceID: 3526}
+      Script: {instanceID: 3514}
     - Class: 114
-      Script: {instanceID: 3536}
+      Script: {instanceID: 3530}
     - Class: 114
-      Script: {instanceID: 38896}
+      Script: {instanceID: 3540}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -384,6 +384,12 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
+      Hash: 1fbcc8bf8c03af370e5e7738a065b835
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Pause
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -588,7 +594,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 1ea9d535392be07039016ed47c13ea3f
+      Hash: ca413487aa53529228862dd73f4ac269
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -682,13 +688,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 1fbcc8bf8c03af370e5e7738a065b835
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Pause
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: "F:/\uC720\uB2C8\uD2F0 \uADF8\uB9BC/ActionDR2/ActionDR.exe"
+  playerPath: "F:/\uC720\uB2C8\uD2F0 \uADF8\uB9BC/ActionDR0.2 Build/ActionDR.exe"
