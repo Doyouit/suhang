@@ -167,8 +167,8 @@ public class GameManager : MonoBehaviour
             enemy.target = player.transform;
             enemy.manager = this;
             boss = instantEnemy.GetComponent<Boss>();
-            boss.maxHealth = 200 + stage/5 * 40;
-            boss.curHealth = 200 + stage/5 * 40;
+            boss.maxHealth = 200 + stage/5 * 60;
+            boss.curHealth = 200 + stage/5 * 60;
             while (enemyCntA + enemyCntB + enemyCntC + enemyCntD > 0)
             {
                 yield return null;

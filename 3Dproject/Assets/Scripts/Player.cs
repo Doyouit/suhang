@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     bool isDamage;
     bool isShop;
     bool isDead;
+    bool isTurn;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -148,7 +149,7 @@ public class Player : MonoBehaviour
     {
         transform.LookAt(transform.position + moveVec);
 
-        if (fDown && !isReload && !isDead){
+        if (fDown && !isReload && !isDead && !isTurn){
             Ray ray = followCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit raycastHit;
             if(Physics.Raycast(ray, out raycastHit, 100))
@@ -164,7 +165,7 @@ public class Player : MonoBehaviour
     {
         if (jDown && moveVec == Vector3.zero && !isJump && !isDodge && !isSwap && !isReload && !isDead)
         {
-            rigid.AddForce(Vector3.up * 15, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * 12, ForceMode.Impulse);
             anim.SetBool("isJump", true);
             anim.SetTrigger("doJump");
             isJump = true;
@@ -222,9 +223,12 @@ public class Player : MonoBehaviour
             if(equipWeapon.type == Type.Melee)
             {
                 Attackcool = true;
+                isTurn = true;
+
             
 
                 Invoke("AttackCool", 0.7f);
+
             }
             equipWeapon.Use();
             
@@ -242,6 +246,7 @@ public class Player : MonoBehaviour
     void AttackCool()
     {
         Attackcool = false;
+        isTurn = false;
     }
 
     void Reload()

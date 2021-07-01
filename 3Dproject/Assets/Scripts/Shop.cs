@@ -65,7 +65,7 @@ public class Shop : MonoBehaviour
              Debug.Log("응애");
              if(enterPlayer.equipWeapon.type == Type.Melee)
              {
-                enterPlayer.equipWeapon.damage += 5;
+                enterPlayer.equipWeapon.damage += 2;
                 enterPlayer.coin -= price;
              }
               
@@ -81,7 +81,7 @@ public class Shop : MonoBehaviour
          else if(index == 2)
          {
              enterPlayer.maxHealth += 20;
-             enterPlayer.health = enterPlayer.maxHealth;
+             enterPlayer.health += 20;
              enterPlayer.coin -= price;
          }
     }
