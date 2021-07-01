@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameManager manager;
 
     public AudioSource jumpSound;
+    public AudioSource hitSound;
 
     public int ammo;
     public int coin;
@@ -390,6 +391,7 @@ public class Player : MonoBehaviour
             if (!isDamage)
             {
                 Bullet enemyBullet = other.GetComponent<Bullet>();
+                hitSound.Play();
                 health -= enemyBullet.damage; 
 
                 
@@ -406,6 +408,7 @@ public class Player : MonoBehaviour
     IEnumerator OnDamage(bool isBossAtk)
     {
         isDamage = true;
+        hitSound.Play();
         foreach(MeshRenderer mesh in meshs)
         {
             mesh.material.color = Color.yellow;
