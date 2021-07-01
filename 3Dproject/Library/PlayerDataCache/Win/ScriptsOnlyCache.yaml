@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - ReadmeEditorBE5
     Assembly-CSharp.dll:
     - Boss
     - BossMissile
@@ -14,6 +16,7 @@ ScriptsOnlyBuild:
     - Orbit
     - Pause
     - Player
+    - ReadmeBE5
     - Shop
     - StartZone
     - Weapon
@@ -64,6 +67,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -144,6 +151,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -246,7 +255,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 1d91b4f1ff5ace28fc3ec1e8abf6fba5
+      Hash: 788776192959c6315acb42cbc8484de0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -456,7 +465,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 29f796ba2326fb0c5b70496cca87308c
+      Hash: 9519bada80731851050a7a4f35366bbe
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shop
@@ -594,7 +603,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: ca413487aa53529228862dd73f4ac269
+      Hash: f548f46f2cbcc0d9088a7b0fc59372b7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -691,4 +700,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: "F:/\uC720\uB2C8\uD2F0 \uADF8\uB9BC/ActionDR0.2 Build/ActionDR.exe"
+  playerPath: C:/Users/ROG/Documents/GitHub/suhang/ActionDR4 Build/ActionDR.exe
