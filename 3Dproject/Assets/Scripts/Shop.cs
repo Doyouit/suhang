@@ -10,12 +10,18 @@ public class Shop : MonoBehaviour
 
     public GameObject[] itemObj;
     public int[] itemPrice;
+    public int[] stUp;
     public Transform[] itemPos;
     public string[] talkData;
     public Text talkText;
 
+    
     Player enterPlayer;
 
+
+    
+        
+    
     public void Enter(Player player)
     {
         enterPlayer = player;
@@ -28,6 +34,7 @@ public class Shop : MonoBehaviour
         uiGroup.anchoredPosition = Vector3.down * 1000;
     }
 
+   
     public void Buy(int index)
     {
         int price = itemPrice[index];
@@ -40,8 +47,47 @@ public class Shop : MonoBehaviour
 
         enterPlayer.coin -= price;
         Vector3 ranVec = Vector3.right * Random.Range(-3, 3) + Vector3.forward * Random.Range(-3, 3);
-        Instantiate(itemObj[index], itemPos[index].position + ranVec, itemPos[index].rotation);
+        Instantiate(itemObj[index], itemPos[index].position + ranVec, itemPos[index].rotation);     
     }
+
+    public void StBuy(int index)
+    {
+        int price = itemPrice[index];
+        if(price > enterPlayer.coin)
+        {
+            StopCoroutine(Talk());
+            StartCoroutine(Talk());
+            return;
+        }
+
+        if(index == 0) // 근접무기 공격력 증가
+         {
+             Debug.Log("응애");
+             if(enterPlayer.equipWeapon.type == Type.Melee)
+             {
+                enterPlayer.equipWeapon.damage += 5;
+                enterPlayer.coin -= price;
+             }
+              
+         }      
+         else if(index == 1) // 총기류 데미지 1 증가
+         {
+             if(enterPlayer.equipWeapon.type == Type.Range)
+             {
+                enterPlayer.equipWeapon.damage += 1;
+                enterPlayer.coin -= price;
+             }
+         }
+         else if(index == 2)
+         {
+             enterPlayer.maxHealth += 20;
+             enterPlayer.health = enterPlayer.maxHealth;
+             enterPlayer.coin -= price;
+         }
+    }
+
+    
+        
 
     IEnumerator Talk()
     {

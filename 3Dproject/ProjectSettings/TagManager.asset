@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - EnemyBullet
   - Shop
+  - StShop
   layers:
   - Default
   - TransparentFX

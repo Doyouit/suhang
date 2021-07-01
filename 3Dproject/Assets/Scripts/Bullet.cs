@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public int damage;
     public bool isMelee;
     public bool isRock;
+    
 
     void OnCollisionEnter(Collision collision)
     {

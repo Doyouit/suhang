@@ -13,10 +13,13 @@ public class Player : MonoBehaviour
     public Camera followCamera;
     public GameManager manager;
 
+    public AudioSource jumpSound;
+
     public int ammo;
     public int coin;
     public int health;
     public int score;
+    public int bulletDamPlus;
    
     public int maxAmmo;
     public int maxCoin;
@@ -162,6 +165,8 @@ public class Player : MonoBehaviour
             anim.SetBool("isJump", true);
             anim.SetTrigger("doJump");
             isJump = true;
+
+            jumpSound.Play();
         }
     }
 
@@ -200,7 +205,7 @@ public class Player : MonoBehaviour
 
         if(fDown && isFireReady && !isDodge && !isSwap && !isReload && Attackcool == false && !isShop && !isDead)
         {
-            if(equipWeapon.type == Weapon.Type.Melee)
+            if(equipWeapon.type == Type.Melee)
             {
                 Attackcool = true;
             
@@ -209,7 +214,7 @@ public class Player : MonoBehaviour
             }
             equipWeapon.Use();
             
-            anim.SetTrigger(equipWeapon.type == Weapon.Type.Melee ? "doSwing" : "doShot");
+            anim.SetTrigger(equipWeapon.type == Type.Melee ? "doSwing" : "doShot");
             fireDelay = 0;
             
         }
@@ -225,7 +230,7 @@ public class Player : MonoBehaviour
         if (equipWeapon == null)
             return;
 
-        if (equipWeapon.type == Weapon.Type.Melee)
+        if (equipWeapon.type == Type.Melee)
             return;
 
         if (ammo == 0)

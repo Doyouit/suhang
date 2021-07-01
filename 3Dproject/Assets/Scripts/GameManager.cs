@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Boss boss;
     public GameObject itemShop;
     public GameObject weaponShop;
+    public GameObject statusShop;
     public GameObject startZone;
     public int stage;
     public float playTime;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     public Text curScoreText;
     public Text bestText;
     public int bestScore;
+
     void Awake()
     {
         enemyList = new List<int>();
@@ -128,6 +130,7 @@ public class GameManager : MonoBehaviour
     {
         itemShop.SetActive(false);
         weaponShop.SetActive(false);
+        statusShop.SetActive(false);
         startZone.SetActive(false);
 
         foreach (Transform zone in enemyZones)
@@ -144,6 +147,7 @@ public class GameManager : MonoBehaviour
 
         itemShop.SetActive(true);
         weaponShop.SetActive(true);
+        statusShop.SetActive(true);
         startZone.SetActive(true);
 
         foreach (Transform zone in enemyZones)
@@ -163,7 +167,8 @@ public class GameManager : MonoBehaviour
             enemy.target = player.transform;
             enemy.manager = this;
             boss = instantEnemy.GetComponent<Boss>();
-
+            boss.maxHealth = 200 + stage/5 * 40;
+            boss.curHealth = 200 + stage/5 * 40;
             while (enemyCntA + enemyCntB + enemyCntC + enemyCntD > 0)
             {
                 yield return null;
@@ -253,7 +258,7 @@ public class GameManager : MonoBehaviour
         playerCoinTxt.text = string.Format("{0:n0}", player.coin);
         if(player.equipWeapon == null)
             playerAmmoTxt.text = "- / " + player.ammo;
-        else if (player.equipWeapon.type == Weapon.Type.Melee)
+        else if (player.equipWeapon.type == Type.Melee)
             playerAmmoTxt.text = "- / " + player.ammo;
         else
             playerAmmoTxt.text = player.equipWeapon.curAmmo + " / " + player.ammo;

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine;  
+
+public enum Type { Melee, Range };
 
 public class Weapon : MonoBehaviour
 {
-    public enum Type { Melee, Range };
+ 
     public Type type;
     public int damage;
     public float rate;
@@ -17,6 +19,7 @@ public class Weapon : MonoBehaviour
     public GameObject bullet;
     public Transform bulletCasePos;
     public GameObject bulletCase;
+
 
     public void Use()
     {
@@ -49,8 +52,10 @@ public class Weapon : MonoBehaviour
     {
         //총알 발사
         GameObject intantBullet = Instantiate(bullet, bulletPos.position, bulletPos.rotation);
+        Bullet bulletdam = intantBullet.GetComponent<Bullet>();
         Rigidbody bulletRigid = intantBullet.GetComponent<Rigidbody>();
         bulletRigid.velocity = bulletPos.forward * 50;
+        bulletdam.damage = damage;
 
         yield return null;
         //탄피 배출

@@ -26,6 +26,10 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent nav;
     public Animator anim;
 
+    
+
+
+    
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -36,6 +40,8 @@ public class Enemy : MonoBehaviour
 
         if(enemyType != Type.D)
             Invoke("ChaseStart", 2);
+
+        
     }
 
     void ChaseStart()
@@ -167,8 +173,12 @@ public class Enemy : MonoBehaviour
         }
         else if (other.tag == "Bullet")
         {
+
             Bullet bullet = other.GetComponent<Bullet>();
+
             curHealth -= bullet.damage;
+
+            
             if(curHealth<0)
             {
                 curHealth = 0;
