@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     public AudioSource jumpSound;
     public AudioSource hitSound;
+    public AudioSource attacksound;
+    public AudioSource gunsound;
 
     public int ammo;
     public int coin;
@@ -204,8 +206,19 @@ public class Player : MonoBehaviour
         fireDelay += Time.deltaTime;
         isFireReady = equipWeapon.rate < fireDelay;
 
+        
+        
+
         if(fDown && isFireReady && !isDodge && !isSwap && !isReload && Attackcool == false && !isShop && !isDead)
         {
+            if(equipWeapon.type == Type.Melee)
+            {
+                Invoke("PlayAttack",0.3f);
+            }
+            if(equipWeapon.type == Type.Range)
+            {
+                gunsound.Play();
+            }
             if(equipWeapon.type == Type.Melee)
             {
                 Attackcool = true;
@@ -219,6 +232,11 @@ public class Player : MonoBehaviour
             fireDelay = 0;
             
         }
+    }
+
+    void PlayAttack()
+    {
+        attacksound.Play();
     }
 
     void AttackCool()

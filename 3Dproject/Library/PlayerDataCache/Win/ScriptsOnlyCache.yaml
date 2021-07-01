@@ -1,7 +1,5 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - ReadmeEditorBE5
     Assembly-CSharp.dll:
     - Boss
     - BossMissile
@@ -16,7 +14,6 @@ ScriptsOnlyBuild:
     - Orbit
     - Pause
     - Player
-    - ReadmeBE5
     - Shop
     - StartZone
     - Weapon
@@ -255,7 +252,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 3ae4f281e2e35f47545406f8eface6df
+      Hash: 40191c3155a1cbd4c8c5ba45a4ff9704
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -700,4 +697,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/ROG/Documents/GitHub/suhang/ActionDR Final Build/ActionDR.exe
+  playerPath: C:/Users/ROG/Documents/GitHub/suhang/ActionDR Real Final Build/ActionDR.exe
