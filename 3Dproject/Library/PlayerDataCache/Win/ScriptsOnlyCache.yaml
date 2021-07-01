@@ -1,7 +1,5 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - ReadmeEditorBE5
     Assembly-CSharp.dll:
     - Boss
     - BossMissile
@@ -16,7 +14,6 @@ ScriptsOnlyBuild:
     - Orbit
     - Pause
     - Player
-    - ReadmeBE5
     - Shop
     - StartZone
     - Weapon
@@ -700,4 +697,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/ROG/Documents/GitHub/suhang/ActionDR4 Build/ActionDR.exe
+  playerPath: C:/Users/ROG/Documents/GitHub/suhang/ActionDR6 Build/ActionDR.exe
